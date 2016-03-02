@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA9A2C96-957C-4D4F-A063-402E91B2C079}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JitOpener</RootNamespace>
+    <AssemblyName>JitOpener</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tao.DevIl">
+      <HintPath>D:\VS\Libs\Tao-1.2.0-1\bin\Tao.DevIl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SQLite.cs" />
+    <Compile Include="TranslationNA.cs" />
+    <Compile Include="SQLiteGenerator\SQLiteGenerator.cs" />
+    <Compile Include="TranslationID.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="FileFormats.cs" />
+    <Compile Include="Skills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Skills.Designer.cs">
+      <DependentUpon>Skills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjPos.Designer.cs">
+      <DependentUpon>ObjPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MobPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MobPos.Designer.cs">
+      <DependentUpon>MobPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quests.Designer.cs">
+      <DependentUpon>Quests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetItems.Designer.cs">
+      <DependentUpon>SetItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemList.Designer.cs">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JitConverter.cs" />
+    <Compile Include="MakeItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeItems.Designer.cs">
+      <DependentUpon>MakeItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recipes.Designer.cs">
+      <DependentUpon>Recipes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SiteGenerator.cs" />
+    <Compile Include="Translation.cs" />
+    <Compile Include="TranslationBR.cs" />
+    <Compile Include="TranslationJP.cs" />
+    <EmbeddedResource Include="ObjPos.resx">
+      <DependentUpon>ObjPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemList.resx">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeItems.resx">
+      <DependentUpon>MakeItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MobPos.resx">
+      <DependentUpon>MobPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Quests.resx">
+      <DependentUpon>Quests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recipes.resx">
+      <DependentUpon>Recipes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetItems.resx">
+      <DependentUpon>SetItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Skills.resx">
+      <DependentUpon>Skills.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="simple.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\cygwin\home\david\blueblocks\BlueBlocksLib\BlueBlocksLib.csproj">
+      <Project>{3e610d1e-838a-4eab-80ae-ca4e78c2d83a}</Project>
+      <Name>BlueBlocksLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\cygwin\home\david\json\Source\Src\Newtonsoft.Json\Newtonsoft.Json.Net40.csproj">
+      <Project>{a9ae40ff-1a21-414a-9fe7-3be13644cc6d}</Project>
+      <Name>Newtonsoft.Json.Net40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DevIL.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="point.png" />
+    <Content Include="sqlite3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="template.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+    
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>THE TITLE</title>
+        <link rel="stylesheet" type="text/css" href="dijit/themes/claro/claro.css"
+        />
+        <link rel="stylesheet" type="text/css" href="dijit/themes/nihilo/nihilo.css"
+        />
+        <link rel="stylesheet" type="text/css" href="dijit/themes/soria/soria.css"
+        />
+        <style type="text/css">
+            body, html { font-family:helvetica,arial,sans-serif; font-size:90%; }
+            a { text-decoration:none; }
+            a:hover { text-decoration:underline; }
+        </style>
+        <style type="text/css">
+            html, body { width: 100%; height: 100%; margin: 0; overflow:hidden; }
+            #borderContainer { width: 100%; height: 100%; }
+        </style>
+        <link href="tablecloth/tablecloth.css" rel="stylesheet" type="text/css" media="screen" />
+        <script type="text/javascript" src="tablecloth/tablecloth.js"></script>
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-7604545-3']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+</script>
+    </head>
+<body class=" claro ">
+    <div dojotype="dijit.layout.BorderContainer" style="width: 100%; height: 100%;">
+        <div dojotype="dijit.layout.ContentPane" region="top">
+            <a href="INDEX_HTML">COOL_PAGE_TITLE</a> | <a href="blog/">The Blog</a> | <a href="SIMPLE_PHP">Simple Version</a>
+        </div>
+        <div dojotype="dijit.layout.AccordionContainer" jsId="panels" region="leading" style="width: 150px;">
+<!-- MENU -->
+        </div>
+        <div dojotype="dojox.layout.ContentPane" jsId="contentPane" region="center">
+            Click on the menu to see information about items!
+        </div>
+        <div dojotype="dijit.layout.ContentPane" region="bottom">
+            Made by astrobunny. Images and descriptions by Hanbitsoft.
+			
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Aika NA Javascript Site -->
+			<ins class="adsbygoogle"
+				 style="display:inline-block;width:468px;height:15px"
+				 data-ad-client="ca-pub-9952814099318731"
+				 data-ad-slot="4610281396"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="dojo/dojo.js" djconfig="parseOnLoad: true">
+</script>
+    <script type="text/javascript">
+        dojo.require("dijit.layout.BorderContainer");
+        dojo.require("dijit.layout.TabContainer");
+        dojo.require("dijit.layout.AccordionContainer");
+        dojo.require("dijit.layout.ContentPane");
+        dojo.require("dijit.Menu");
+        dojo.require("dojo.hash");
+        dojo.require("dojox.layout.ContentPane");
+
+    </script>
+    
+    <script type="text/javascript">
+
+		function trim(str, chars) {
+			return ltrim(rtrim(str, chars), chars);
+		}
+		 
+		function ltrim(str, chars) {
+			chars = chars || "\\s";
+			return str.replace(new RegExp("^[" + chars + "]+", "g"), "");
+		}
+		 
+		function rtrim(str, chars) {
+			chars = chars || "\\s";
+			return str.replace(new RegExp("[" + chars + "]+$", "g"), "");
+		}
+
+        function getFragment() {
+            var appUrl = window.location.href;
+            var results = new Array();
+            // Split url - bookmark starts with the # character     
+            results = appUrl.split("#");
+            return results[1];
+        }
+
+        function setFragment(fragment) {
+            var appUrl = window.location.href;
+            var results = new Array();
+            // Split url - bookmark starts with the # character     
+            results = appUrl.split("#");
+            window.location.href = results[0] + "#" + fragment;
+        }
+
+        function updateContent() {
+				var fragment = getFragment();
+				
+				if (fragment) {
+					var path = 'data/' + trim(fragment.replace(/-/g,'/').replace(/con/,'ccon'), '/');
+					contentPane.set('href', path + ".html");
+				} else {
+					contentPane.set('href', "./blog/");
+				}
+			}
+		
+        dojo.addOnLoad(function () {
+            updateContent();
+        });
+
+        dojo.subscribe("/dojo/hashchange", null, updateContent);
+    </script>
+
+</html>
